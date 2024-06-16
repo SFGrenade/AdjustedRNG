@@ -15,13 +15,13 @@ namespace AdjustedRNG;
 public class AdjustedRNG : SFCore.Generics.GlobalSettingsMod<RngSettings>
 {
     internal static AdjustedRNG Instance;
-        
+
     public override string GetVersion() => "1.0";
 
     private static Type urt = typeof(UnityEngine.Random);
     private static Type cdrt = typeof(ContextDependendRandom);
     private static Dictionary<string, MethodInfo> cdr = new();
-        
+
     private static List<ILHook> hooks = new();
 
     public AdjustedRNG() : base("Adjusted RNG")
